@@ -4,17 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link rel="icon" href="./assets/login/icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <title>CodeConnect</title>
 </head>
-
 <body>
-
+    <main class="container">
+        <div class="login">
+            <picture>
+                <!-- Imagem para telas pequenas (mobile) -->
+                <source srcset="./assets/login/loginMob.png" media="(max-width: 600px)">
+                
+                <!-- Imagem para telas médias (tablet) -->
+                <source srcset="./assets/login/loginTab.png" media="(max-width: 1024px)">
+                
+                <!-- Imagem padrão para telas grandes (desktop) -->
+                <img src="./assets/login/loginDesk.png" alt="Pessoa usando computador" class="login__imagem">
+            </picture>
+            <h1 class="none">CodeConnect</h1>
+            <h2>Login</h2>
+            <h3>Boas-vindas! Faça seu login.</h3>
+            <div class="login__email">
+                <label for="email">Email ou usuário</label>
+                <input type="email" id="email" placeholder="omaiordev" required>
+            </div>
+            <div class="login__password">
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="******" required>
+            </div>
+            <label class="remember">
+                <input type="checkbox" id="remember">
+                <span class="checkmark"></span>
+                Lembrar-me
+            </label>
+            <div class="forgot-password">
+                <a href="./pages/senha.html">Esqueci a senha</a>
+            </div>
+            <button id="loginButton" class="login__button">Login</button>
+            <div class="login__ou">           
+                <span class="login__sociais">ou entre com outras contas</span>
+            </div>
+            <div class="login__google">
+                <button id="googleLogin"><img src="./assets/login/google.svg"></button>
+                <label for="googleLogin">Google</label>
+            </div>
+            <div class="login__github">
+                <button id="githubLogin"><img src="./assets/login/git.svg"></button>
+                <label for="githubLogin">GitHub</label>
+            </div>
+            <span class="login__sem-conta">Ainda não tem uma conta?</span>
+            <a href="./pages/cadastro.html" class="login__cadastro">Crie seu cadastro!<img src="./assets/login/cadastro.svg" class="login__cad__imagem"></a>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 

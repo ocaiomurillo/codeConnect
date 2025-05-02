@@ -1,0 +1,255 @@
+.container{
+    background-color: var(--grafite);
+    width: 100%;
+    height: 100%;
+    padding: 56px 16px;
+    align-items: center;
+}
+
+.login{
+    display: grid;
+    background-color: var(--cinza-escuro);
+    padding: 16px 32px;
+    border-radius: 16px;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+        "img img"
+        "h2 h2"
+        "h3 h3"
+        "email email"
+        "senha senha"
+        "remember forgot"
+        "botao botao"
+        "entrada entrada"
+        "google github"
+        "sem-conta sem-conta"
+        "cadastro cadastro";
+}
+
+.login__imagem{
+    display: flex;
+    justify-content: center;
+    grid-area: img;
+    margin-bottom: 32px;
+}
+
+.login h2{
+    font: var(--subtitle-semibold);
+    grid-area: h2;
+    margin-bottom: 16px;
+}
+
+.login h3{
+    font: var(--paragraph-large);
+    grid-area: h3;
+    margin-bottom: 40px;
+}
+
+.login__email{
+    grid-area: email;
+    display: grid;
+    row-gap: 8px;
+    margin-bottom: 16px;
+}
+
+.login__email label{
+    font: val(--paragraph)
+}
+
+.login__email input{
+    background-color: var(--cinza-medio);
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+.login__email input:placeholder{
+    font: var(--paragraph-small-semibold);
+    color: var(--cinza-escuro);
+}
+
+.login__password{
+    grid-area: senha;
+    display: grid;
+    row-gap: 8px;
+    margin-bottom: 8px;
+}
+
+.login__password label{
+    font: val(--paragraph)
+}
+
+.login__password input{
+    background-color: var(--cinza-medio);
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+.login__password input:placeholder{
+    font: var(--paragraph-small);
+    color: var(--cinza-escuro);
+}
+
+/* Container do checkbox */
+.remember {
+    grid-area: remember;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    user-select: none;
+    font: var(--paragraph-small);
+    color: var(--cinza-medio);
+  }
+  
+  /* Esconde o checkbox padrão */
+  .remember input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Cria o checkbox personalizado */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid var(--cinza-medio);
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border-radius: 4px;
+  }
+
+  /* Quando o mouse passa por cima */
+  .remember:hover input ~ .checkmark {
+    background-color: transparent;
+  }
+  
+  /* Quando o checkbox está marcado */
+  .remember input:checked ~ .checkmark {
+    background: url("../assets/login/flag.svg") no-repeat center center;
+  }
+  
+  /* Cria o indicador de marcação (escondido quando não estiver marcado) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Mostra o indicador quando marcado */
+  .custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Estilo do indicador de marcação */
+  .custom-checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  
+  /* Estilo para foco (acessibilidade) */
+  .custom-checkbox input:focus ~ .checkmark {
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+  }
+
+.forgot-password{
+    grid-area: forgot;
+    text-decoration: underline;
+    font: var(--paragraph-small);
+}
+
+.login__button{
+    grid-area: botao;
+    background-color: var(--verde-destaque);
+    border-radius: 4px;
+    padding: 12px 16px;
+    color: var(--verde-petroleo);
+    font: var(--paragraph-semibold);
+    text-align: center;
+    background-image: url("../assets/login/seta.svg");
+    background-position: 70% center;
+    background-repeat: no-repeat;
+    margin-bottom: 32px;
+}
+
+.login__sociais{
+    grid-area: entrada;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.login__ou{
+    grid-area: entrada;
+        margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.login__ou::before,
+.login__ou::after{
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid var(--cinza-medio);
+}
+
+.login__ou::before{
+    margin-right: 10px;
+}
+
+.login__ou::after{
+    margin-left: 10px;
+}
+
+.login__google{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: center;
+    grid-area: google;
+}
+
+.login__google label{
+    font: var(--label);
+}
+
+.login__github{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: center;
+    grid-area: github;
+}
+
+.login__github label{
+    font: var(--label);
+}
+
+.login__sem-conta{
+    margin-top: 24px;
+    grid-area: sem-conta;
+    font: var(--paragraph-small);
+    text-align: center;
+}
+
+.login__cadastro{
+    margin-top: 12.5px;
+    font: var(--paragraph);
+    color: var(--verde-destaque);
+    justify-content: center;
+    grid-area: cadastro;
+    display: flex;
+    column-gap: 12px;
+}
